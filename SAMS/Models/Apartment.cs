@@ -7,5 +7,10 @@ namespace SAMS.Models
 {
     public class Apartment
     {
+        public int Apart_No { get; set; }
+
+        public string Address { get; set; }
+
+        public int Types { get; set; }
     }
 }
