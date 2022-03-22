@@ -1,0 +1,27 @@
+﻿@page
+@model SAMS.Pages.Rooms.GetRoomsModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Student NO   </th>
+            <th>    Name  </th>
+            <th>  Address  </th>
+            <th>    Has Room  </th>
+            <th>  Registration Date   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rooms)
+        {
+            <tr>
+                <td> @item.Place_no </td>
+                <td> @item.Room_No </td>
+                <td> @item.Rent_Per_Semester </td>
+                <td> @item.Occupied </td>
+            </tr>
+        }
+    </tbody>
+</table>

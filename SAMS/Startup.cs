@@ -27,6 +27,9 @@ namespace SAMS
 
             services.AddScoped<Interfaces.IStudentService, Services.StudentService>();
             services.AddScoped<Interfaces.ILeasingService, Services.LeasingService>();
+            services.AddScoped<Interfaces.IRoomService, Services.RoomService>();
+            services.AddScoped<Interfaces.IApartmentService, Services.ApartmentService>();
+            services.AddScoped<Interfaces.IDormitoryService, Services.DormitoryService>();
 
       
 
