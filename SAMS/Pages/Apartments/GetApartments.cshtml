@@ -1,0 +1,24 @@
+﻿@page
+@model SAMS.Pages.Apartments.GetApartmentsModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Apartment NO   </th>
+            <th>    Name  </th>
+            <th>  Types  </th>   
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Apartments)
+        {
+            <tr>
+                <td> @item.Apart_No </td>
+                <td> @item.Address </td>
+                <td> @item.Types </td>
+            </tr>
+        }
+    </tbody>
+</table>

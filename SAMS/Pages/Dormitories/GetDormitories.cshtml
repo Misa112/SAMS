@@ -1,0 +1,24 @@
+﻿@page
+@model SAMS.Pages.Dormitories.GetDormitoriesModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Dormitory NO   </th>
+            <th>    Name  </th>
+            <th>  Address  </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Dormitories)
+        {
+            <tr>
+                <td> @item.Dormitory_No </td>
+                <td> @item.Name </td>
+                <td> @item.Address </td>
+            </tr>
+        }
+    </tbody>
+</table>

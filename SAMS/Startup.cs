@@ -28,6 +28,9 @@ namespace SAMS
             services.AddRazorPages();
 
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IApartmentService, ApartmentService>();
+            services.AddScoped<IDormitoryService, DormitoryService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

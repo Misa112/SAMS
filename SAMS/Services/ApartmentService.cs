@@ -21,7 +21,7 @@ namespace SAMS.Services
         public List<Apartment> GetAllApartments()
         {
             List<Apartment> apartments = new List<Apartment>();
-            string query = "select *  from Apartment";
+            string query = "select *  from Appartment";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

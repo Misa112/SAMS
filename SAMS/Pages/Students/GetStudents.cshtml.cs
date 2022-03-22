@@ -14,8 +14,6 @@ namespace SAMS.Pages.Students
         private IStudentService studentService;
         public IEnumerable<Student> Students { get; set; }
 
-        public int MyProperty { get; set; }
-
         public GetStudentsModel(IStudentService service)
         {
             studentService = service;
