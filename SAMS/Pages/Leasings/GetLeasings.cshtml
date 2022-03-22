@@ -1,0 +1,26 @@
+﻿@page
+@model SAMS.Pages.Leasings.GetLeasingsModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Student NO   </th>
+            <th>    Name  </th>
+            <th>  Address  </th>
+            <th>    Has Room  </th>
+            <th>  Registration Date   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Leasings)
+        {
+            <tr>
+                <td> @item.Leasing_No </td>
+                <td> @item.Date_From </td>
+                <td> @item.Date_To </td>
+            </tr>
+        }
+    </tbody>
+</table>

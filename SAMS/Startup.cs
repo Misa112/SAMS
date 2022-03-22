@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SAMS.Interfaces;
-using SAMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +25,11 @@ namespace SAMS
         {
             services.AddRazorPages();
 
-            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<Interfaces.IStudentService, Services.StudentService>();
+            services.AddScoped<Interfaces.ILeasingService, Services.LeasingService>();
+
+      
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
