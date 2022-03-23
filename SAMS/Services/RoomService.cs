@@ -45,5 +45,32 @@ namespace SAMS.Services
                 return rooms;
             }
         }
+
+        public List<Room> GetRoomsInRange(int id)
+        {
+            //how to capture name of variable passed in URL???
+            List<Room> rooms = new List<Room>();
+            string query = "select * from Room where {apart.id or dorm.id} = id";//fix
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Room room = new Room();
+                        room.Place_no = Convert.ToInt32(reader[0]);
+                        room.Room_No = Convert.ToInt32(reader[0]);
+                        room.Rent_Per_Semester = Convert.ToInt32(reader[0]);
+                        room.Occupied = Convert.ToBoolean(reader[0]);
+
+                        rooms.Add(room);
+                    }
+                }
+                return rooms;
+            }
+        }
     }
 }

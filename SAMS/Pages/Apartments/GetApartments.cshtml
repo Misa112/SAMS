@@ -9,6 +9,7 @@
             <th>  Apartment No   </th>
             <th>    Address  </th>
             <th>  Type  </th>
+            <th>  Details  </th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
                 <td> @item.Apart_No </td>
                 <td> @item.Address </td>
                 <td> @item.Types </td>
+                <td><p><a asp-page="/Rooms/GetVacantsRoomInRange" asp-route-apartid="@item.Apart_No">Vacant rooms</a></p></td>
             </tr>
         }
     </tbody>

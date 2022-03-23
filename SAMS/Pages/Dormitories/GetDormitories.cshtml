@@ -6,19 +6,21 @@
 <table class="table">
     <thead>
         <tr>
-            <th>  Apartment No   </th>
-            <th>    Address  </th>
-            <th>  Type  </th>
+            <th>  Dormitory No   </th>
+            <th>    Name  </th>
+            <th>  Address  </th>
+            <th>  Details  </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Dormitories)
         {
-            <tr>
-                <td> @item.Dormitory_No </td>
-                <td> @item.Name </td>
-                <td> @item.Address </td>
-            </tr>
+        <tr>
+            <td> @item.Dormitory_No </td>
+            <td> @item.Name </td>
+            <td> @item.Address </td>
+            <td><p><a asp-page="/Rooms/GetVacantsRoomInRange" asp-route-dormid="@item.Dormitory_No">Vacant rooms</a></p></td>
+        </tr>
         }
     </tbody>
 </table>
