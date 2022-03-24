@@ -46,18 +46,30 @@ namespace SAMS.Services
             }
         }
 
-        public List<Room> GetRoomsInRange(int id)
+        public List<Room> GetRoomsInRange(int id, string type)
         {
-            //how to capture name of variable passed in URL???
+            string query;
+
+            if (type == "Dormitory")
+            {
+                query = "select * from Room where Occupied = 'false' and Dormitory_No = " + id;
+            }
+            else
+            {
+                query = "select * from Room where Occupied = 'false' and Appart_No = " + id;
+            }
+
             List<Room> rooms = new List<Room>();
-            string query = "select * from Room where {apart.id or dorm.id} = id";//fix
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    
                     SqlDataReader reader = command.ExecuteReader();
+
                     while (reader.Read())
                     {
                         Room room = new Room();

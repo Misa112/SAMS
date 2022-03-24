@@ -1,8 +1,28 @@
-﻿@page "{apartid:int?}/{dormid:int?}"
+﻿@page
 @model SAMS.Pages.Rooms.GetVacantsRoomInRangeModel
 @{
     
 }
 
 
-<p>abc</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Place NO   </th>
+            <th>    Room NO  </th>
+            <th>  Rent Per Semester  </th>
+            <th>    Occupied  </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rooms)
+        {
+            <tr>
+                <td> @item.Place_no </td>
+                <td> @item.Room_No </td>
+                <td> @item.Rent_Per_Semester </td>
+                <td> @item.Occupied </td> @*no idea why it shows occupied as true everywhere*@
+            </tr>
+        }
+    </tbody>
+</table>

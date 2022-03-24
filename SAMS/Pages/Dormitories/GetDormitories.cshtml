@@ -19,7 +19,7 @@
             <td> @item.Dormitory_No </td>
             <td> @item.Name </td>
             <td> @item.Address </td>
-            <td><p><a asp-page="/Rooms/GetVacantsRoomInRange" asp-route-dormid="@item.Dormitory_No">Vacant rooms</a></p></td>
+            <td><p><a asp-page="/Rooms/GetVacantsRoomInRange" asp-route-id="@item.Dormitory_No" asp-route-type="Dormitory">Vacant rooms</a></p></td>
         </tr>
         }
     </tbody>

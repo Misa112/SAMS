@@ -9,5 +9,7 @@ namespace SAMS.Interfaces
     public interface IRoomService
     {
         public List<Room> GetAllRooms();
+
+        public List<Room> GetRoomsInRange(int id, string type);
     }
 }
