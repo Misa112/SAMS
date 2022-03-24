@@ -11,5 +11,7 @@ namespace SAMS.Interfaces
         List<Student> GetAllStudents();
 
         StudentInfo GetStudentInfo(int id);
+
+        List<Student> GetWaitingList();
     }
 }
