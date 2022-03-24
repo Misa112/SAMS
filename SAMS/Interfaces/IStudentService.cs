@@ -9,5 +9,7 @@ namespace SAMS.Interfaces
     public interface IStudentService
     {
         List<Student> GetAllStudents();
+
+        StudentInfo GetStudentInfo(int id);
     }
 }

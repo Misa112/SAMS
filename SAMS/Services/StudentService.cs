@@ -46,5 +46,47 @@ namespace SAMS.Services
                 return students;
             }
         }
+
+        public StudentInfo GetStudentInfo(int id)
+        {
+            StudentInfo student = new StudentInfo();
+            string query =
+                "select Student.Student_No, Student.SName, " +
+                "Leasing.Leasing_No, Room.Room_No, " +
+                "Room.Dormitory_No, Room.Appart_No " +
+                "from Student " +
+                "join Leasing on Student.Student_No = Leasing.Student_No " +
+                "join Room on Leasing.Place_No = Room.Place_No " +
+                "where Student.Student_No = " + id;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        student.Student_No = Convert.ToInt32(reader[0]);
+                        student.SName = Convert.ToString(reader[1]);
+                        student.Leasing_No = Convert.ToInt32(reader[2]);
+                        student.Room_No = Convert.ToInt32(reader[3]);
+
+                        //if (student.Dormitory_No != null)
+                        //if(student.Dormitory_No.HasValue)
+
+                        if (!student.Dormitory_No.HasValue)
+                            student.Dormitory_No = Convert.ToInt32(reader[4]);
+                        
+
+                        //if (student.Appart_No != null)
+                        if(!student.Appart_No.HasValue)
+                            student.Appart_No = Convert.ToInt32(reader[5]);
+
+                    }
+                }
+                return student;
+            }
+        }
     }
 }

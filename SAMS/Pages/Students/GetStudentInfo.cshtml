@@ -1,0 +1,27 @@
+﻿@page
+@model SAMS.Pages.Students.GetStudentInfoModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Student No   </th>
+            <th>    Name  </th>
+            <th>  Leasing No  </th>
+            <th>    Room No  </th>
+            <th>  Apartment No   </th>
+            <th>  Dormitory No   </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td> @Model.Student.Student_No </td>
+                <td> @Model.Student.SName </td>
+                <td> @Model.Student.Leasing_No </td>
+                <td> @Model.Student.Room_No </td>
+                <td> @Model.Student.Appart_No </td>
+                <td> @Model.Student.Dormitory_No </td>
+            </tr>
+    </tbody>
+</table>

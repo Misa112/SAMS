@@ -11,6 +11,7 @@
             <th>  Address  </th>
             <th>    Has Room  </th>
             <th>  Registration Date   </th>
+            <th>  Details   </th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
             <td> @item.SAddress </td>
             <td> @item.Has_Room </td>
             <td> @item.RegistrationDate </td>
+            <td> <p><a asp-page="/Students/GetStudentInfo" asp-route-id="@item.Student_No">Details</a></p></td>
         </tr>
         }
     </tbody>
