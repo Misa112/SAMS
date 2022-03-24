@@ -1,0 +1,28 @@
+﻿@page
+@model SAMS.Pages.Students.GetWaitingListModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Student NO   </th>
+            <th>    Name  </th>
+            <th>  Address  </th>
+            <th>    Has Room  </th>
+            <th>  Registration Date   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td> @item.Student_No </td>
+                <td> @item.SName </td>
+                <td> @item.SAddress </td>
+                <td> @item.Has_Room </td>
+                <td> @item.RegistrationDate </td>
+            </tr>
+        }
+    </tbody>
+</table>
