@@ -75,13 +75,15 @@ namespace SAMS.Services
                         if (Convert.IsDBNull(student.Dormitory_No) || student.Dormitory_No is null)
                             student.Dormitory_No = 0;
                         else
-                            student.Dormitory_No = Convert.ToInt32(reader[4]);
+                        if (!student.Dormitory_No.HasValue)
 
                         if (Convert.IsDBNull(student.Appart_No) || student.Appart_No is null || student.Appart_No == 0)
                             student.Appart_No = 0;
                         else
-                            student.Appart_No = Convert.ToInt32(reader[5]);
+                        if(!student.Appart_No.HasValue)
                             
+
+
 
 
                     }
