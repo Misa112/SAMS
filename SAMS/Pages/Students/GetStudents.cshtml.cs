@@ -23,5 +23,11 @@ namespace SAMS.Pages.Students
         {
             Students = studentService.GetAllStudents();
         }
+
+        public void OnPost(int student_id)
+        {
+            studentService.DeleteStudent(student_id);
+            Students = studentService.GetAllStudents();
+        }
     }
 }

@@ -13,5 +13,7 @@ namespace SAMS.Interfaces
         StudentInfo GetStudentInfo(int id);
 
         List<Student> GetWaitingList();
+
+        void DeleteStudent(int student_id);
     }
 }

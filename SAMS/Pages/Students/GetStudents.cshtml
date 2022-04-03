@@ -11,7 +11,8 @@
             <th>  Address  </th>
             <th>    Has Room  </th>
             <th>  Registration Date   </th>
-            <th>  Details   </th>
+            <th>  Rent   </th>
+            <th>  Delete   </th>
         </tr>
     </thead>
     <tbody>
@@ -23,7 +24,13 @@
             <td> @item.SAddress </td>
             <td> @item.Has_Room </td>
             <td> @item.RegistrationDate </td>
-            <td> <p><a asp-page="/Students/GetStudentInfo" asp-route-id="@item.Student_No">Details</a></p></td>
+            <td> <p><a asp-page="/Students/GetStudentInfo" asp-route-id="@item.Student_No">Rent</a></p></td>
+            <td>
+                <form method="post">
+                    <input value="@item.Student_No" name="student_id" id="student_id" type="hidden" />
+                    <input class="btn btn-danger" value="Delete" type="submit" />
+                </form>
+            </td>
         </tr>
         }
     </tbody>

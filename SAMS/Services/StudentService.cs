@@ -72,20 +72,16 @@ namespace SAMS.Services
                         student.Leasing_No = Convert.ToInt32(reader[2]);
                         student.Room_No = Convert.ToInt32(reader[3]);
 
-                        if (Convert.IsDBNull(student.Dormitory_No) || student.Dormitory_No is null)
+                        if (Convert.IsDBNull(student.Dormitory_No) || student.Dormitory_No is null || student.Appart_No == 0)
                             student.Dormitory_No = 0;
                         else
-                        if (!student.Dormitory_No.HasValue)
+                            student.Dormitory_No = Convert.ToInt32(reader[4]);
+
 
                         if (Convert.IsDBNull(student.Appart_No) || student.Appart_No is null || student.Appart_No == 0)
                             student.Appart_No = 0;
                         else
-                        if(!student.Appart_No.HasValue)
-                            
-
-
-
-
+                            student.Appart_No = Convert.ToInt32(reader[5]);
                     }
                 }
                 return student;
@@ -116,6 +112,23 @@ namespace SAMS.Services
                     }
                 }
                 return students;
+            }
+        }
+
+
+        public void DeleteStudent(int student_id)
+        {
+            string query = $"delete from Student where Student_No = {student_id};";
+
+            //assume that in database is 'delete on cascade' and dont deal with deleting relations
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
             }
         }
     }
