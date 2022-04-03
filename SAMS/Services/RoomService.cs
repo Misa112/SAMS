@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SAMS.Interfaces;
 using SAMS.Models;
 using System;
@@ -35,9 +36,9 @@ namespace SAMS.Services
                     {
                         Room room = new Room();
                         room.Place_no = Convert.ToInt32(reader[0]);
-                        room.Room_No = Convert.ToInt32(reader[0]);
-                        room.Rent_Per_Semester = Convert.ToInt32(reader[0]);
-                        room.Occupied = Convert.ToBoolean(reader[0]);
+                        room.Room_No = Convert.ToInt32(reader[3]);
+                        room.Rent_Per_Semester = Convert.ToInt32(reader[1]);
+                        room.Occupied = Convert.ToBoolean(reader[2]);
 
                         rooms.Add(room);
                     }
@@ -74,9 +75,9 @@ namespace SAMS.Services
                     {
                         Room room = new Room();
                         room.Place_no = Convert.ToInt32(reader[0]);
-                        room.Room_No = Convert.ToInt32(reader[0]);
-                        room.Rent_Per_Semester = Convert.ToInt32(reader[0]);
-                        room.Occupied = Convert.ToBoolean(reader[0]);
+                        room.Room_No = Convert.ToInt32(reader[3]);
+                        room.Rent_Per_Semester = Convert.ToInt32(reader[1]);
+                        room.Occupied = Convert.ToBoolean(reader[2]);
 
                         rooms.Add(room);
                     }
@@ -84,5 +85,6 @@ namespace SAMS.Services
                 return rooms;
             }
         }
+
     }
 }

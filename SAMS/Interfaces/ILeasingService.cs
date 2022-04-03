@@ -9,5 +9,7 @@ namespace SAMS.Interfaces
     public interface ILeasingService
     {
         List<Leasing> GetAllLeasings();
+
+        void AddLeasing(int student_id, int place_id);
     }
 }

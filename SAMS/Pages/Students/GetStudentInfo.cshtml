@@ -3,6 +3,8 @@
 @{
 }
 
+@if (Model.Student.SName != null)
+{
 <table class="table">
     <thead>
         <tr>
@@ -20,8 +22,34 @@
                 <td> @Model.Student.SName </td>
                 <td> @Model.Student.Leasing_No </td>
                 <td> @Model.Student.Room_No </td>
-                <td> @Model.Student.Appart_No </td>
-                <td> @Model.Student.Dormitory_No </td>
+                <td>
+                    @if (Model.Student.Appart_No == 0)
+                    {
+                        <text> - </text>
+                    }
+                    else
+                    {
+                        @Model.Student.Appart_No;
+                    }
+                </td>
+                
+                <td>
+                    @if (Model.Student.Dormitory_No == 0)
+                    {
+                        <text> - </text>
+                    }
+                    else
+                    {
+                        @Model.Student.Dormitory_No;
+                    }
+                </td>
+                
             </tr>
     </tbody>
 </table>
+}
+
+else
+{
+<text> <h1 style="text-align: center">No data about this student</h1> </text>
+}

@@ -35,8 +35,8 @@ namespace SAMS.Services
                     {
                         Apartment apartment = new Apartment();
                         apartment.Apart_No = Convert.ToInt32(reader[0]);
-                        apartment.Address = Convert.ToString(reader[0]);
-                        apartment.Types = Convert.ToInt32(reader[0]);
+                        apartment.Address = Convert.ToString(reader[1]);
+                        apartment.Types = Convert.ToInt32(reader[2]);
 
                         apartments.Add(apartment);
                     }

@@ -6,6 +6,8 @@
 <table class="table">
     <thead>
         <tr>
+            <th>  Student NO   </th>
+            <th>  Place NO   </th>
             <th>  Leasing NO   </th>
             <th>    Date From  </th>
             <th>  Date To  </th>
@@ -14,11 +16,13 @@
     <tbody>
         @foreach (var item in Model.Leasings)
         {
-            <tr>
-                <td> @item.Leasing_No </td>
-                <td> @item.Date_From </td>
-                <td> @item.Date_To </td>
-            </tr>
+        <tr>
+            <td> @item.Student_No </td>
+            <td> @item.Place_No </td>
+            <td> @item.Leasing_No </td>
+            <td> @item.Date_From </td>
+            <td> @item.Date_To </td>
+        </tr>
         }
     </tbody>
 </table>

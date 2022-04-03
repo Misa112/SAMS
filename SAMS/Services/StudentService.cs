@@ -72,13 +72,18 @@ namespace SAMS.Services
                         student.Leasing_No = Convert.ToInt32(reader[2]);
                         student.Room_No = Convert.ToInt32(reader[3]);
 
-                        if (student.Dormitory_No != null)
+                        if (Convert.IsDBNull(student.Dormitory_No) || student.Dormitory_No is null)
                             student.Dormitory_No = Convert.ToInt32(reader[4]);
+                        else
+                            student.Dormitory_No = 0;
 
-                        if (student.Appart_No != null)
+                        if (Convert.IsDBNull(student.Appart_No) || student.Appart_No is null)
+                            student.Appart_No = 0;
+                        else
                             student.Appart_No = Convert.ToInt32(reader[5]);
+                            
 
-                        //idk why dorm_no and apart_no not workin
+
                     }
                 }
                 return student;

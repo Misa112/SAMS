@@ -1,7 +1,7 @@
 ﻿@page
 @model SAMS.Pages.Rooms.GetVacantsRoomInRangeModel
 @{
-    
+
 }
 
 
@@ -12,6 +12,7 @@
             <th>    Room NO  </th>
             <th>  Rent Per Semester  </th>
             <th>    Occupied  </th>
+            <th>    Assign room  </th>
         </tr>
     </thead>
     <tbody>
@@ -21,8 +22,18 @@
                 <td> @item.Place_no </td>
                 <td> @item.Room_No </td>
                 <td> @item.Rent_Per_Semester </td>
-                <td> @item.Occupied </td> @*no idea why it shows occupied as true everywhere*@
+                <td> @item.Occupied </td>
+                <td>
+                    <form method="post" action="~/Leasings/GetLeasings">
+                        <input value="@item.Place_no" name="place_id" id="place_id" type="hidden" />
+                        <input class="btn btn-primary" value="Assign" type="submit" />
+                    </form>
+                </td>
             </tr>
+
         }
     </tbody>
 </table>
+
+
+

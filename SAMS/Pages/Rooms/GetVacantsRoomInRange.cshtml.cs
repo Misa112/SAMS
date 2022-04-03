@@ -23,5 +23,6 @@ namespace SAMS.Pages.Rooms
         {
             Rooms = roomService.GetRoomsInRange(id, type);
         }
+
     }
 }

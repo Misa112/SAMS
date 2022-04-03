@@ -35,8 +35,8 @@ namespace SAMS.Services
                     {
                         Dormitory dormitory = new Dormitory();
                         dormitory.Dormitory_No = Convert.ToInt32(reader[0]);
-                        dormitory.Name = Convert.ToString(reader[0]);
-                        dormitory.Address = Convert.ToString(reader[0]);
+                        dormitory.Name = Convert.ToString(reader[1]);
+                        dormitory.Address = Convert.ToString(reader[2]);
 
                         dormitories.Add(dormitory);
                     }
