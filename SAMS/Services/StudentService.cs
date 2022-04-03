@@ -73,11 +73,11 @@ namespace SAMS.Services
                         student.Room_No = Convert.ToInt32(reader[3]);
 
                         if (Convert.IsDBNull(student.Dormitory_No) || student.Dormitory_No is null)
-                            student.Dormitory_No = Convert.ToInt32(reader[4]);
-                        else
                             student.Dormitory_No = 0;
+                        else
+                            student.Dormitory_No = Convert.ToInt32(reader[4]);
 
-                        if (Convert.IsDBNull(student.Appart_No) || student.Appart_No is null)
+                        if (Convert.IsDBNull(student.Appart_No) || student.Appart_No is null || student.Appart_No == 0)
                             student.Appart_No = 0;
                         else
                             student.Appart_No = Convert.ToInt32(reader[5]);
